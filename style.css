@@ -1,0 +1,84 @@
+
+  #console {
+    height: 200px;
+    width: 300px;
+    position: relative;
+    border: 3px solid green;
+  }
+  
+  #start {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  #container {
+   
+    background-color: pink;
+      width: 100%;
+      height: 100%;
+  }
+
+  /* #characters1 {
+      background-color: red;
+      width: 50%;
+      height: 100%;
+      display: inline-block;
+
+  }
+
+  #characters2 {
+    background-color:pink;
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+} */
+
+#first-character {
+    height: 100%;
+    width: 49%;
+  
+    background-image: url('images/geisha.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+}
+
+#second-character {
+    height: 100%;
+    width: 49%;
+    background-image: url('images/soldier.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: right;
+ 
+    
+}
+.pozitionare{ 
+ display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.pozitionareInput{
+    
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        
+}
+.pozitionareInput + div {
+    cursor: pointer;
+}
+
+.pozitionareInput:checked + div {
+    outline: 1px solid #f00;
+}
+
+button#btn-lock-in{
+  display: none;
+}

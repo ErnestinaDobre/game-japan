@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Building the options tree</h2>
+
+    <script>
+        // addAnswer
+
+
+        let options = {
+            
+            questionTitle: "Would you like to deploy to okinawa / tokyo gulf?",
+            answers: [
+                {
+                    from: "okinawa",
+                    questionTitle: "Go vizit the beach / go to barracks",
+                    answers: [
+                        {
+                            from: "beach",
+                            questionTitle: "Life is a beach? Panic / relax",
+                            answers: []
+                        },
+                        {
+                            from: "barracks",
+                            questionTitle: "Get some rest? (YES, NO)",
+                            answers: [
+
+                            ]
+                        }
+                    ]
+                },
+                {
+                    from: "tokyo",
+                    questionTitle: "Go to HQ / visit city",
+                    answers: [
+                        {
+                            from: "HQ",
+                            questionTitle: "What to do in HQ? Talk to staff / check supplies / restart day",
+                            answers: [
+                                {
+                                    from: "talk-to-staff",
+                                    questionTitle: "",
+                                    answers: [
+
+                                    ]
+                                },
+                                {
+                                    from: "check-supplies",
+                                    questionTitle: "",
+                                    answers: [
+
+                                    ]
+                                },
+                                {
+                                    from: "restart-day",
+                                    questionTitle: "",
+                                    answers: [
+
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            from: "CITY",
+                            questionTitle: "",
+                            answers: []
+                        }
+                    ]
+                }
+            ]
+        };
+
+
+        // function Answer(from, questionTitle){ this.}
+
+        function addAnswer(from, option, newFrom, optionTitle ) {
+            if(!option.from){
+                // root option
+            }
+            for(let answer of option.answers){
+                if(answer.from == from){
+                    // we should append the new option to the answer
+                    let theNewAnser = {
+                        from : newFrom,
+                        questionTitle : optionTitle,
+                        answers : []
+                    };
+                    answer.answers.push(theNewAnser);
+                    return;
+                }
+                addAnswer(from, answer, newFrom, optionTitle);
+
+            }
+        }
+
+        addAnswer('barracks', options, 'yes', 'Sleep on bed / talk to SO');
+        addAnswer('barracks', options, 'no', 'Go to hotel / go to ryokan');
+
+        addAnswer('yes', options, 'sleep-bed-dream-home', 'Dream about home');
+        addAnswer('yes', options, 'sleep-bed-nightmare', 'Dream about war');
+
+        console.log('options are: ', options);
+    </script>
+</body>
+
+</html>

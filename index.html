@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+</head>
+
+<body>
+    <div id="console">
+        <button id="start">
+            START
+        </button>
+
+    </div>
+    <button id="btn-lock-in">Lock in</button>
+
+    <div id="story-options">
+
+    </div>
+
+    <!-- <button id="next">Next option</button> -->
+    <ul>
+        <li>okinawa
+            <ul>
+                <li>beach</li>
+                <li>barracks</li>
+            </ul>
+        </li>
+        <li>tokyo
+            <ul>
+                <li>HQ
+                    <ul>
+                        <li>talk to staff</li>
+                        <li>...</li>
+                        <li>reset day</li>
+                    </ul>
+                </li>
+
+                <li>CITY
+                    <ul>
+                        <li>...</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script src="script.js"></script>
+
+    <script>
+        addAnswer('barracks', options, 'yes', 'Sleep on bed / talk to SO');
+        addAnswer('barracks', options, 'no', 'Go to hotel / go to ryokan');
+
+        addAnswer('yes', options, 'sleep-bed-dream-home', 'Dream about home');
+        addAnswer('yes', options, 'sleep-bed-nightmare', 'Dream about war');
+
+        // TODO: build the whole options tree just by using addAnswer
+
+    </script>
+</body>
+
+</html>
